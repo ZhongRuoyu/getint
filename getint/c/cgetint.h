@@ -3,10 +3,10 @@
 #include <stdio.h>
 
 int cgetint(int *errCode) {
-    if (!(errCode == NULL)) *errCode = 0; // Initialising errCode
+    if (errCode != NULL) *errCode = 0;
     int c = getchar(); // Temporarily stores next character from stdin
-    int sign = 1; // Sign of result: 1 = positive; -1 = negative
-    int absResult = 0; // Absolute value of result
+    int sign = 1;
+    int absResult = 0;
 
     while ((c == '\t') || (c == '\v') || (c == '\f') || (c == '\r') || (c == ' ')) c = getchar();
     // Consumes all whitespaces at the front
@@ -17,7 +17,7 @@ int cgetint(int *errCode) {
     } // Sign check
 
     if ((c < '0') || (c > '9')) {
-        if (!(errCode == NULL)) *errCode = -1; // Invalid input: Not starting with a digit
+        if (errCode != NULL) *errCode = -1; // Invalid input: Not starting with a digit
         return 0;
     }
 
@@ -35,6 +35,6 @@ int cgetint(int *errCode) {
     if (c == '\n') return (sign * absResult); // Success
 
     fflush(stdin); // Clears stdin
-    if (!(errCode == NULL)) *errCode = -2; // Invalid input: Not ending with a digit
+    if (errCode != NULL) *errCode = -2; // Invalid input: Not ending with a digit
     return 0;
 }
