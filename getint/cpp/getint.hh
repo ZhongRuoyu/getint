@@ -29,7 +29,7 @@ int getint(int *errCode = NULL) {
 
     if (c == '\n') return (sign * absResult); // Success
 
-    do c = getchar(); while ((c == '\t') || (c == '\v') || (c == '\f') || (c == '\r') || (c == ' '));
+    while ((c == '\t') || (c == '\v') || (c == '\f') || (c == '\r') || (c == ' ')) c = getchar();
     // Consumes all whitespaces at the end
 
     if (c == '\n') return (sign * absResult); // Success
