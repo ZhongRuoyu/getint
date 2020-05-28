@@ -18,6 +18,7 @@ int getint(int *errCode = NULL) {
 
     if ((c < '0') || (c > '9')) {
         if (errCode != NULL) *errCode = -1; // Invalid input: Not starting with a digit
+        fflush(stdin); // Clears stdin
         return 0;
     }
 
