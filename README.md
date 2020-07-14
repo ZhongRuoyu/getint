@@ -4,7 +4,7 @@ I felt like creating a C/C++ function which can read integers from the input buf
 
 After creating it, I have been told that there are quite a number of similar functions existing already. But still I decided to put it here.
 
-You can find more about it in my [blog post](https://zhongruoyu.github.io/blog/2020/May/23/getint/).
+You can find more about it in my [blog post](https://zhongruoyu.github.io/projects/2020-05/getint/).
 
 When you find bugs or areas of improvement, please feel free to [create a new issue](https://github.com/ZhongRuoyu/getint/issues/new/choose).
 
